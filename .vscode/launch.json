@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/packages/ControlNet/train_controlnet.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "AM_I_DOCKER": "False",
+                "BUILD_WITH_CUDA": "True",
+              }
+        },
+        {
+            "name": "Segment",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/segment.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "AM_I_DOCKER": "False",
+                "BUILD_WITH_CUDA": "True",
+              }
+        },
+        {
+            "name": "Create Segmentation PDF",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/create_segmentation_pdf.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "AM_I_DOCKER": "False",
+                "BUILD_WITH_CUDA": "True",
+              }
+        }
+    ]
+}

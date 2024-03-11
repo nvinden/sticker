@@ -1,0 +1,11 @@
+{
+    "RUN_NAME": "base",
+    "BASE_PATH": "/home/nvinden/Work/bruce/sticker",
+    "DATA_PATH": "data/",
+    "SEGMENTATION_SAVE_PATH": "segmentation_test2/",
+    "TTV_SPLIT": [0.8, 0.1, 0.1],
+    "RUN_MODE": "debug",
+    "BOX_THRESHOLD": 0.30,
+    "TEXT_THRESHOLD": 0.00,
+    "SAVE_ANNOTATED_IMAGES": false
+}
