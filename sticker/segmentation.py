@@ -3,8 +3,8 @@ import sys
 import os
 import spacy
 
-sys.path.append("/home/nvinden/Work/bruce/sticker/packages/GroundingDINO")
-sys.path.append("/home/nvinden/Work/bruce/sticker/packages/segment-anything")
+sys.path.append("/home/vision/projects/sticker/packages/GroundingDINO")
+sys.path.append("/home/vision/projects/sticker/packages/segment-anything")
 
 from PIL import Image
 
@@ -125,6 +125,12 @@ def curate_mask(mask: np.ndarray):
     # Check if the mask is in too many pieces
     num_labels, _ = cv2.connectedComponents(smoothed_mask)
     if num_labels - 1 != 1:  # More than one object piece
+        return None
+
+    # Check if the mask is at least 10% of the total image size
+    mask_area = np.count_nonzero(smoothed_mask)
+    total_area = mask.shape[0] * mask.shape[1]
+    if mask_area < total_area * 0.10:
         return None
 
     # Convert filled mask back to boolean

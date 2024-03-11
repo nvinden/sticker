@@ -4,3 +4,5 @@ models
 saves
 
 packages
+
+*__pycache__*

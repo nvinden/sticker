@@ -41,8 +41,8 @@ def is_metadata_nlp_computed(metadata : dict):
 def segment():
     # Loading models: Hierarchical Object Parsing, groundingDINO, and SegmentAnything
     nlp_mod = spacy.load("en_core_web_trf")
-    gd_mod = build_gd_model(filename="/home/nvinden/Work/bruce/sticker/saves/gd/groundingdino_swint_ogc.pth", ckpt_config_filename="/home/nvinden/Work/bruce/sticker/saves/gd/GroundingDINO_SwinT_OGC.py")
-    sam_mod = build_sam_model(filename="/home/nvinden/Work/bruce/sticker/saves/sam/sam_vit_h_4b8939.pth")
+    gd_mod = build_gd_model(filename="saves/gd/groundingdino_swint_ogc.pth", ckpt_config_filename="saves/gd/GroundingDINO_SwinT_OGC.py")
+    sam_mod = build_sam_model(filename="saves/sam/sam_vit_h_4b8939.pth")
 
     # Load data from each chunk
     for chunk_no in CHUNK_NOS:
